@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argojk71
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argojk71
+  template:
+    metadata:
+      labels:
+        app: argojk71
+    spec:
+      containers:
+        - name: argojk71
+          image: jaykumark7/argojk71:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
