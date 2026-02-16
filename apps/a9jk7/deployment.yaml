@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a9jk7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a9jk7
+  template:
+    metadata:
+      labels:
+        app: a9jk7
+    spec:
+      containers:
+        - name: a9jk7
+          image: jaykumark7/a9jk7:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
