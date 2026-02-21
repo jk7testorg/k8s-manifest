@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetestest2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubernetestest2
+  template:
+    metadata:
+      labels:
+        app: kubernetestest2
+    spec:
+      containers:
+        - name: kubernetestest2
+          image: jaykumark7/kubernetestest2:1.0.1
+          imagePullPolicy: Always
+          # ports:
+          #   - containerPort: 3000
