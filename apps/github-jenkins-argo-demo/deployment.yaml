@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-jenkins-argo-demo
+  labels:
+    app: github-jenkins-argo-demo
+    backstage.io/kubernetes-id: github-jenkins-argo-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-jenkins-argo-demo
+  template:
+    metadata:
+      labels:
+        app: github-jenkins-argo-demo
+        backstage.io/kubernetes-id: github-jenkins-argo-demo
+    spec:
+      containers:
+        - name: github-jenkins-argo-demo
+          image: jaykumark7/github-jenkins-argo-demo:1.0.1
+          imagePullPolicy: Always
+          # ports:
+
+          #   - containerPort: 3000
+
