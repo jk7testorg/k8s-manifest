@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goldenimagetest2
+  labels:
+    app: goldenimagetest2
+    backstage.io/kubernetes-id: goldenimagetest2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goldenimagetest2
+  template:
+    metadata:
+      labels:
+        app: goldenimagetest2
+        backstage.io/kubernetes-id: goldenimagetest2
+    spec:
+      containers:
+        - name: goldenimagetest2
+          image: jaykumark7/goldenimagetest2:1.0.1
+          imagePullPolicy: Always
+          # ports:
+
+          #   - containerPort: 3000
+
