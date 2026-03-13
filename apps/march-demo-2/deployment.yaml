@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: march-demo-2
+  labels:
+    app: march-demo-2
+    backstage.io/kubernetes-id: march-demo-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: march-demo-2
+  template:
+    metadata:
+      labels:
+        app: march-demo-2
+        backstage.io/kubernetes-id: march-demo-2
+    spec:
+      containers:
+        - name: march-demo-2
+          image: jaykumark7/march-demo-2:1.0.1
+          imagePullPolicy: Always
+          # ports:
+
+          #   - containerPort: 3000
+
