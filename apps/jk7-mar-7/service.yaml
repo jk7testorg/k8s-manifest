@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: jk7-mar-7
+  name: ${APP_NAME}
 spec:
   selector:
-    app: jk7-mar-7
+    app: ${APP_NAME}
   ports:
     - protocol: TCP
       port: 80

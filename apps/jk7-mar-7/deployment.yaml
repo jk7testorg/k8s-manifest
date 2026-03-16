@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jk7-mar-7
+  name: ${APP_NAME}
   labels:
-    app: jk7-mar-7
-    backstage.io/kubernetes-id: jk7-mar-7
+    app: ${APP_NAME}
+    backstage.io/kubernetes-id: ${APP_NAME}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jk7-mar-7
+      app: ${APP_NAME}
   template:
     metadata:
       labels:
-        app: jk7-mar-7
-        backstage.io/kubernetes-id: jk7-mar-7
+        app: ${APP_NAME}
+        backstage.io/kubernetes-id: ${APP_NAME}
     spec:
       containers:
-        - name: jk7-mar-7
-          image: jaykumark7/jk7-mar-7:1.0.1
+        - name: ${APP_NAME}
+          image: ${DOCKER_IMAGE}
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
