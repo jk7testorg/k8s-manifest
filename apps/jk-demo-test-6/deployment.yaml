@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jk-demo-test-6
+  labels:
+    app: jk-demo-test-6
+    backstage.io/kubernetes-id: jk-demo-test-6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jk-demo-test-6
+  template:
+    metadata:
+      labels:
+        app: jk-demo-test-6
+        backstage.io/kubernetes-id: jk-demo-test-6
+    spec:
+      containers:
+        - name: jk-demo-test-6
+          image: jaykumark7/jk-demo-test-6:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
