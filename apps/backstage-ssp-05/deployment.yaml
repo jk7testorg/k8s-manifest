@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backstage-ssp-05
+  labels:
+    app: backstage-ssp-05
+    backstage.io/kubernetes-id: backstage-ssp-05
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backstage-ssp-05
+  template:
+    metadata:
+      labels:
+        app: backstage-ssp-05
+        backstage.io/kubernetes-id: backstage-ssp-05
+    spec:
+      containers:
+        - name: backstage-ssp-05
+          image: jaykumark7/backstage-ssp-05:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
