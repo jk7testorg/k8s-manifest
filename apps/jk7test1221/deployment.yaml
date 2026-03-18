@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: jk7test1221
-          image: jaykumark7/jk7test1221:1.0.1
+          image: jaykumark7/jk7test1221:1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
