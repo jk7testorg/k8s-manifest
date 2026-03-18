@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gspann-back-stage
+  labels:
+    app: gspann-back-stage
+    backstage.io/kubernetes-id: gspann-back-stage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gspann-back-stage
+  template:
+    metadata:
+      labels:
+        app: gspann-back-stage
+        backstage.io/kubernetes-id: gspann-back-stage
+    spec:
+      containers:
+        - name: gspann-back-stage
+          image: jaykumark7/gspann-back-stage:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
