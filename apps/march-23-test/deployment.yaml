@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: march-23-test
-          image: jaykumark7/march-23-test:1.0.1
+          image: jaykumark7/march-23-test:1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
