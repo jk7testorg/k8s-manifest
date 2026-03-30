@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: source-2-result-4
+  labels:
+    app: source-2-result-4
+    backstage.io/kubernetes-id: source-2-result-4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: source-2-result-4
+  template:
+    metadata:
+      labels:
+        app: source-2-result-4
+        backstage.io/kubernetes-id: source-2-result-4
+    spec:
+      containers:
+        - name: source-2-result-4
+          image: jaykumark7/source-2-result-4:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
