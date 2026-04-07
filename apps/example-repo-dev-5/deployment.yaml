@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-repo-dev-5
+  labels:
+    app: example-repo-dev-5
+    backstage.io/kubernetes-id: example-repo-dev-5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-repo-dev-5
+  template:
+    metadata:
+      labels:
+        app: example-repo-dev-5
+        backstage.io/kubernetes-id: example-repo-dev-5
+    spec:
+      containers:
+        - name: example-repo-dev-5
+          image: jaykumark7/example-repo-dev-5:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
