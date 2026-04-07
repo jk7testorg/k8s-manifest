@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-to-argo-playground
+  labels:
+    app: github-to-argo-playground
+    backstage.io/kubernetes-id: github-to-argo-playground
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-to-argo-playground
+  template:
+    metadata:
+      labels:
+        app: github-to-argo-playground
+        backstage.io/kubernetes-id: github-to-argo-playground
+    spec:
+      containers:
+        - name: github-to-argo-playground
+          image: jaykumark7/github-to-argo-playground:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
