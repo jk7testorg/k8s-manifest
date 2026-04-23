@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-repo-developer-17
+  labels:
+    app: example-repo-developer-17
+    backstage.io/kubernetes-id: example-repo-developer-17
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-repo-developer-17
+  template:
+    metadata:
+      labels:
+        app: example-repo-developer-17
+        backstage.io/kubernetes-id: example-repo-developer-17
+    spec:
+      containers:
+        - name: example-repo-developer-17
+          image: jaykumark7/example-repo-developer-17:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
