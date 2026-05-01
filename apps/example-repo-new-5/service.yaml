@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-repo-new-5
+spec:
+  selector:
+    app: example-repo-new-5
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+
+  type: LoadBalancer
+
