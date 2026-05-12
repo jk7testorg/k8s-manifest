@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: may-12-new-loadbalancer-test1
-          image: jaykumark7/may-12-new-loadbalancer-test1:1.0.1
+          image: jaykumark7/may-12-new-loadbalancer-test1:1.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

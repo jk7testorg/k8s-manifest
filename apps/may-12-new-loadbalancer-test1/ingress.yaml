@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: may-12-new-loadbalancer-test1
+  namespace: default
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
