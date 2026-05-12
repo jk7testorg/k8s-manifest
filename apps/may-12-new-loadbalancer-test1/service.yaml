@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: may-12-new-loadbalancer-test1
+spec:
+  selector:
+    app: may-12-new-loadbalancer-test1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+
+  type: ClusterIP
+

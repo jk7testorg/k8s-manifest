@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: may-12-new-loadbalancer-test1
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /may-12-new-loadbalancer-test1
+            pathType: Prefix
+            backend:
+              service:
+                name: may-12-new-loadbalancer-test1
+                port:
+                  number: 80
