@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: example-repo-new-7
-          image: jaykumark7/example-repo-new-7:1.0.1
+          image: jaykumark7/example-repo-new-7:1.0.4
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
