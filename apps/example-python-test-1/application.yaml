@@ -18,3 +18,13 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  ignoreDifferences:
+  - group: argoproj.io
+    kind: Application
+    jsonPointers:
+    - /metadata/annotations/argocd.argoproj.io~1tracking-id
+    ignoreDifferences:
+  - group: argoproj.io
+    kind: Application
+    jsonPointers:
+    - /metadata/annotations/argocd.argoproj.io~1tracking-id
