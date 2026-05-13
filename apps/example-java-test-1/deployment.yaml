@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-java-test-1
+  labels:
+    backstage.io/kubernetes-id: example-java-test-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-java-test-1
+  template:
+    metadata:
+      labels:
+        app: example-java-test-1
+        backstage.io/kubernetes-id: example-java-test-1
+    spec:
+      containers:
+        - name: example-java-test-1
+          image: jaykumark7/example-java-test-1:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
