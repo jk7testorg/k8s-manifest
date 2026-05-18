@@ -1,0 +1,50 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: example-python-test-5
+#   namespace: argocd
+#   labels:
+#     app.kubernetes.io/name: example-python-test-5
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/jk7testorg/k8s-manifest.git
+#     targetRevision: main
+#     path: apps/example-python-test-5
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: default
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example-python-test-5-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/jk7testorg/k8s-manifest.git
+    targetRevision: main
+    path: apps/example-python-test-5/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  ignoreDifferences:
+  - group: argoproj.io
+    kind: Application
+    jsonPointers:
+    - /metadata/annotations/argocd.argoproj.io~1tracking-id
+    ignoreDifferences:
+  - group: argoproj.io
+    kind: Application
+    jsonPointers:
+    - /metadata/annotations/argocd.argoproj.io~1tracking-id
