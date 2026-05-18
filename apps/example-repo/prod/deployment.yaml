@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-repo
+  namespace: prod
+  labels:
+    app: example-repo
+    backstage.io/kubernetes-id: example-repo
+    environment: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-repo
+  template:
+    metadata:
+      labels:
+        app: example-repo
+        backstage.io/kubernetes-id: example-repo
+        environment: prod
+    spec:
+      containers:
+        - name: example-repo
+          image: jaykumark7/example-repo:1.0.6
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "prod"
