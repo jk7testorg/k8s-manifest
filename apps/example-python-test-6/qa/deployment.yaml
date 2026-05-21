@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-python-test-6
+  namespace: qa
+  labels:
+    app: example-python-test-6
+    backstage.io/kubernetes-id: example-python-test-6
+    environment: qa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-python-test-6
+  template:
+    metadata:
+      labels:
+        app: example-python-test-6
+        backstage.io/kubernetes-id: example-python-test-6
+        environment: qa
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "5000"
+    spec:
+      containers:
+        - name: example-python-test-6
+          image: jaykumark7/example-python-test-6:1.0.1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "qa"
