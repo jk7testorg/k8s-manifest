@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: example-python-test-10
-          image: jaykumark7/example-python-test-10:1.0.9
+          image: jaykumark7/example-python-test-10:1.0.10
           ports:
             - containerPort: 5000
           env:
