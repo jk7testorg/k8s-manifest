@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: example-python-test-7
-          image: jaykumark7/example-python-test-7:1.0.3
+          image: jaykumark7/example-python-test-7:1.0.5
           ports:
             - containerPort: 5000
           env:
@@ -33,9 +33,7 @@ spec:
           resources:
             requests:
               memory: "64Mi"
-              cpu: "50m"
-              ephemeral-storage: "100Mi"
+              cpu: "10m"
             limits:
               memory: "128Mi"
               cpu: "100m"
-              ephemeral-storage: "100Mi"
