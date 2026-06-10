@@ -1,0 +1,73 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: example-python-test-14
+#   namespace: qa
+#   labels:
+#     app: example-python-test-14
+#     backstage.io/kubernetes-id: example-python-test-14
+#     environment: qa
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: example-python-test-14
+#   template:
+#     metadata:
+#       labels:
+#         app: example-python-test-14
+#         backstage.io/kubernetes-id: example-python-test-14
+#         environment: qa
+#     spec:
+#       containers:
+#         - name: example-python-test-14
+#           image: jaykumark7/example-python-test-14:1.0.1
+#           ports:
+#             - containerPort: 5000
+#           env:
+#             - name: APP_ENV
+#               value: "qa"
+
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-python-test-14
+  namespace: qa
+  labels:
+    app: example-python-test-14
+    backstage.io/kubernetes-id: example-python-test-14
+    environment: qa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-python-test-14
+  template:
+    metadata:
+      labels:
+        app: example-python-test-14
+        backstage.io/kubernetes-id: example-python-test-14
+        environment: qa
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "5000"
+    spec:
+      containers:
+        - name: example-python-test-14
+          image: jaykumark7/example-python-test-14:1.0.1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "qa"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "10m"
+              ephemeral-storage: "50Mi"
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+              ephemeral-storage: "100Mi"
