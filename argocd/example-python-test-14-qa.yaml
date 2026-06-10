@@ -28,7 +28,7 @@
 # spec:
 #   project: default
 #   source:
-#     repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+#     repoURL: https://github.com/jk7testorg/k8s-manifest.git
 #     targetRevision: main
 #     path: apps/example-python-test-14/qa
 #   destination:
@@ -48,7 +48,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/BackstageSSPPoC/k8s-manifests.git
+    repoURL: https://github.com/jk7testorg/k8s-manifest.git
     targetRevision: main
     path: apps/example-python-test-14/qa
   destination:
