@@ -32,7 +32,8 @@ spec:
     targetRevision: main
     path: apps/example-python-app-2/qa
   destination:
-    server: https://kubernetes.default.svc
+    #server: https://kubernetes.default.svc
+    server: https://34.172.149.187
     namespace: qa
   syncPolicy:
     automated:
