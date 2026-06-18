@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: dssp-python-test-app-2
-          image: jaykumark7/dssp-python-test-app-2:1.0.1
+          image: jaykumark7/dssp-python-test-app-2:1.0.2
           ports:
             - containerPort: 5000
           env:
