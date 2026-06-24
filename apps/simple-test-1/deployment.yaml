@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-test-1
+  labels:
+    app: simple-test-1
+    backstage.io/kubernetes-id: simple-test-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-test-1
+  template:
+    metadata:
+      labels:
+        app: simple-test-1
+        backstage.io/kubernetes-id: simple-test-1
+    spec:
+      containers:
+        - name: simple-test-1
+          image: jaykumark7/simple-test-1:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
