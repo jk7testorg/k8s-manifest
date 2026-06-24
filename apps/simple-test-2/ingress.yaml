@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-test-2
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /simple-test-2
+            pathType: Prefix
+            backend:
+              service:
+                name: simple-test-2
+                port:
+                  number: 80
