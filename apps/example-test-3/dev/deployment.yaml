@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: example-test-3
-          image: jaykumark7/example-test-3:1.0.1
+          image: jaykumark7/example-test-3:1.0.2
           ports:
             - containerPort: 5000
           env:
