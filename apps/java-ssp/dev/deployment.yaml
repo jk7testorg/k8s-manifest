@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-ssp
+  namespace: dev
+  labels:
+    app: java-ssp
+    backstage.io/kubernetes-id: java-ssp
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-ssp
+  template:
+    metadata:
+      labels:
+        app: java-ssp
+        backstage.io/kubernetes-id: java-ssp
+        environment: dev
+    spec:
+      containers:
+        - name: java-ssp
+          image: jaykumark7/java-ssp:1.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
