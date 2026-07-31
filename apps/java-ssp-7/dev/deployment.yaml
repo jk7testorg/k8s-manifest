@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: java-ssp-7
-          image: jaykumark7/java-ssp-7:1.0.2
+          image: jaykumark7/java-ssp-7:1.0.4
           ports:
             - containerPort: 8080
           env:
