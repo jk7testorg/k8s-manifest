@@ -27,6 +27,8 @@ spec:
           env:
             - name: APP_ENV
               value: "dev"
+            - name: INGRESS_PATH_PREFIX
+              value: "/springboot-test-1-dev"
           resources:
             requests:
               memory: "384Mi"
