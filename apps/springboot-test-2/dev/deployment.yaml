@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: springboot-test-2
-          image: jaykumark7/springboot-test-2:1.0.3
+          image: jaykumark7/springboot-test-2:1.0.4
           ports:
             - containerPort: 8080
           env:
