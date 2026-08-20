@@ -29,8 +29,8 @@ spec:
               value: "dev"
           resources:
             requests:
-              memory: "64Mi"
-              cpu: "50m"
+              memory: "312Mi"
+              cpu: "250m"
             limits:
-              memory: "128Mi"
-              cpu: "100m"
+              memory: "384Mi"
+              cpu: "500m"
