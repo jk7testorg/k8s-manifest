@@ -21,18 +21,16 @@ spec:
     spec:
       containers:
         - name: springboot-test-2
-          image: jaykumark7/springboot-test-2:1.0.1
+          image: jaykumark7/springboot-test-2:1.0.2
           ports:
             - containerPort: 8080
           env:
             - name: APP_ENV
               value: "dev"
-            - name: INGRESS_PATH_PREFIX
-              value: "/springboot-test-1-dev"
           resources:
             requests:
-              memory: "384Mi"
-              cpu: "250m"
+              memory: "64Mi"
+              cpu: "50m"
             limits:
-              memory: "512Mi"
-              cpu: "500m"
+              memory: "128Mi"
+              cpu: "100m"
