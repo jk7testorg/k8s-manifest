@@ -7,18 +7,15 @@ metadata:
     backstage.io/kubernetes-id: no-dns-test-2
     environment: dev
   annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      proxy_set_header X-Forwarded-Prefix /no-dns-test-2-dev;
+  kubernetes.io/ingress.class: nginx
+  nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /no-dns-test-2-dev(/|$)(.*)
-            pathType: ImplementationSpecific
+          - path: /no-dns-test-2-dev
+            pathType: Prefix
             backend:
               service:
                 name: no-dns-test-2
