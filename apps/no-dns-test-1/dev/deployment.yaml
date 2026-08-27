@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: no-dns-test-1
-          image: jaykumark7/no-dns-test-1:1.0.3
+          image: jaykumark7/no-dns-test-1:1.0.5
           ports:
             - containerPort: 8080
           env:
