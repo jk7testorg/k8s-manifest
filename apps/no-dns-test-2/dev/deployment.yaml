@@ -21,12 +21,14 @@ spec:
     spec:
       containers:
         - name: no-dns-test-2
-          image: jaykumark7/no-dns-test-2:1.0.5
+          image: jaykumark7/no-dns-test-2:1.0.6
           ports:
             - containerPort: 8080
           env:
             - name: APP_ENV
               value: "dev"
+            - name: SERVER_SERVLET_CONTEXT_PATH
+              value: "/no-dns-test-2-dev"
           resources:
             requests:
               memory: "384Mi"
