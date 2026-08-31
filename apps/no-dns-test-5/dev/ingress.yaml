@@ -14,7 +14,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /no-dns-test-5-dev(/|$)(.*)
+          - path: /no-dns-test-5-dev
             pathType: Prefix
             backend:
               service:
