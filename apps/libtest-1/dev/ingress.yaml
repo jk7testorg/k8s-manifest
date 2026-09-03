@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: libtest-1
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: libtest-1
+    environment: dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /libtest-1-dev
+            pathType: Prefix
+            backend:
+              service:
+                name: libtest-1
+                port:
+                  number: 80
