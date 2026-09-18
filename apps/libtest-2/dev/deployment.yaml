@@ -7,6 +7,9 @@ metadata:
     app: libtest-2
     backstage.io/kubernetes-id: libtest-2
     environment: dev
+    tags.datadoghq.com/env: dev
+    tags.datadoghq.com/service: libtest-2
+    tags.datadoghq.com/version: "1.0"
 spec:
   replicas: 1
   selector:
@@ -18,10 +21,13 @@ spec:
         app: libtest-2
         backstage.io/kubernetes-id: libtest-2
         environment: dev
+        tags.datadoghq.com/env: dev
+        tags.datadoghq.com/service: libtest-2
+        tags.datadoghq.com/version: "1.0"
     spec:
       containers:
         - name: libtest-2
-          image: jaykumark7/libtest-2:1.0.3
+          image: jaykumark7/libtest-2:1.0.4
           ports:
             - containerPort: 8080
           env:
