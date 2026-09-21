@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: libtest-3
-          image: jaykumark7/libtest-3:1.0.2
+          image: jaykumark7/libtest-3:1.0.3
           ports:
             - containerPort: 8080
           env:
