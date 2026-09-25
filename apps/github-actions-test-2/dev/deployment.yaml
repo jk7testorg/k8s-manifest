@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-actions-test-2
+  namespace: dev
+  labels:
+    app: github-actions-test-2
+    backstage.io/kubernetes-id: github-actions-test-2
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-actions-test-2
+  template:
+    metadata:
+      labels:
+        app: github-actions-test-2
+        backstage.io/kubernetes-id: github-actions-test-2
+        environment: dev
+        tags.datadoghq.com/env: dev
+        tags.datadoghq.com/service: github-actions-test-2
+        tags.datadoghq.com/version: "1.0"
+    spec:
+      containers:
+        - name: github-actions-test-2
+          image: jaykumark7/multilang-java-maven:1.0.5
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
