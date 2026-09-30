@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ndoejstest3
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: ndoejstest3
+spec:
+  selector:
+    app: ndoejstest3
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP

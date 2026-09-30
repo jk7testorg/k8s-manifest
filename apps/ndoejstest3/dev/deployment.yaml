@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ndoejstest3
+  namespace: dev
+  labels:
+    app: ndoejstest3
+    backstage.io/kubernetes-id: ndoejstest3
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ndoejstest3
+  template:
+    metadata:
+      labels:
+        app: ndoejstest3
+        backstage.io/kubernetes-id: ndoejstest3
+        environment: dev
+        tags.datadoghq.com/env: dev
+        tags.datadoghq.com/service: ndoejstest3
+        tags.datadoghq.com/version: "1.0"
+    spec:
+      containers:
+        - name: ndoejstest3
+          image: jaykumark7/ndoejstest3:1.0.1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_ENV
+              value: "dev"
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
