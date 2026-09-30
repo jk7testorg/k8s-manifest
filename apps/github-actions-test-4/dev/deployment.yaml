@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: github-actions-test-4
-          image: jaykumark7/github-actions-test-4:1.0.1
+          image: jaykumark7/github-actions-test-4:1.0.3
           ports:
             - containerPort: 8080
           env:
