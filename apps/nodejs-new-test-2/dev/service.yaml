@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-new-test-2
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: nodejs-new-test-2
+spec:
+  selector:
+    app: nodejs-new-test-2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
