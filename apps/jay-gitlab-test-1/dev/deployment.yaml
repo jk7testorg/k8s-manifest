@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jay-gitlab-test-1
+  namespace: dev
+  labels:
+    app: jay-gitlab-test-1
+    backstage.io/kubernetes-id: jay-gitlab-test-1
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jay-gitlab-test-1
+  template:
+    metadata:
+      labels:
+        app: jay-gitlab-test-1
+        backstage.io/kubernetes-id: jay-gitlab-test-1
+        environment: dev
+    spec:
+      containers:
+        - name: jay-gitlab-test-1
+          image: jaykumark7/jay-gitlab-test-1:1.0.3
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /jay-gitlab-test-1-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
