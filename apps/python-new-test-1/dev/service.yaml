@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-new-test-1
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: python-new-test-1
+spec:
+  selector:
+    app: python-new-test-1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
