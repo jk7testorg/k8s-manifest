@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitlab-test-2
+  namespace: dev
+  labels:
+    app: gitlab-test-2
+    backstage.io/kubernetes-id: gitlab-test-2
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitlab-test-2
+  template:
+    metadata:
+      labels:
+        app: gitlab-test-2
+        backstage.io/kubernetes-id: gitlab-test-2
+        environment: dev
+    spec:
+      containers:
+        - name: gitlab-test-2
+          image: jaykumark7/gitlab-test-2:1.0.2
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /gitlab-test-2-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"

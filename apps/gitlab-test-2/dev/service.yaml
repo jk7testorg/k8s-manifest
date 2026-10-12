@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitlab-test-2
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: gitlab-test-2
+spec:
+  selector:
+    app: gitlab-test-2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
