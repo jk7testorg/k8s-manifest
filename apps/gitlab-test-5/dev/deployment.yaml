@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: gitlab-test-5
-          image: ${CKER_IMAGE}
+          image: jaykumark7/gitlab-test-5:1.0.5
           ports:
             - containerPort: 8080
           env:
