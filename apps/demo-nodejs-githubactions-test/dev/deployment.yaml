@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: demo-nodejs-githubactions-test
-          image: jaykumark7/demo-nodejs-githubactions-test:1.0.1
+          image: ${DO_IMAGE}
           ports:
             - containerPort: 3000
           env:
