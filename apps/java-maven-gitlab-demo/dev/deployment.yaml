@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: java-maven-gitlab-demo
-          image: jaykumark7/java-maven-gitlab-demo:1.0.1
+          image: jaykumark7/java-maven-gitlab-demo:1.0.3
           ports:
             - containerPort: 8080
           env:
