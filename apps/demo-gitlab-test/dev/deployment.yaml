@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: demo-gitlab-test
-          image: jaykumark7/demo-gitlab-test:1.0.1
+          image: jaykumark7/demo-gitlab-test:1.0.3
           ports:
             - containerPort: 8080
           env:
