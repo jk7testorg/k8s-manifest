@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-python-jenkins-test
+  namespace: dev
+  labels:
+    app: demo-python-jenkins-test
+    backstage.io/kubernetes-id: demo-python-jenkins-test
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-python-jenkins-test
+  template:
+    metadata:
+      labels:
+        app: demo-python-jenkins-test
+        backstage.io/kubernetes-id: demo-python-jenkins-test
+        environment: dev
+    spec:
+      containers:
+        - name: demo-python-jenkins-test
+          image: jaykumark7/demo-python-jenkins-test:1.0.1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /demo-python-jenkins-test-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
