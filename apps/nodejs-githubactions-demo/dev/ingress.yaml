@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nodejs-githubactions-demo
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: nodejs-githubactions-demo
+    environment: dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /nodejs-githubactions-demo-dev
+            pathType: Prefix
+            backend:
+              service:
+                name: nodejs-githubactions-demo
+                port:
+                  number: 80
