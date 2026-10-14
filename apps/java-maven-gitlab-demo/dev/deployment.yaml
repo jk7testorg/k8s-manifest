@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-maven-gitlab-demo
+  namespace: dev
+  labels:
+    app: java-maven-gitlab-demo
+    backstage.io/kubernetes-id: java-maven-gitlab-demo
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-maven-gitlab-demo
+  template:
+    metadata:
+      labels:
+        app: java-maven-gitlab-demo
+        backstage.io/kubernetes-id: java-maven-gitlab-demo
+        environment: dev
+    spec:
+      containers:
+        - name: java-maven-gitlab-demo
+          image: jaykumark7/java-maven-gitlab-demo:1.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /java-maven-gitlab-demo-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
