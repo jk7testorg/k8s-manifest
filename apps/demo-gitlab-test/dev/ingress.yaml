@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-gitlab-test
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: demo-gitlab-test
+    environment: dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /demo-gitlab-test-dev
+            pathType: Prefix
+            backend:
+              service:
+                name: demo-gitlab-test
+                port:
+                  number: 80
