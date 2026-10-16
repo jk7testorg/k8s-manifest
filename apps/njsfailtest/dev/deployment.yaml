@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: njsfailtest
+  namespace: dev
+  labels:
+    app: njsfailtest
+    backstage.io/kubernetes-id: njsfailtest
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: njsfailtest
+  template:
+    metadata:
+      labels:
+        app: njsfailtest
+        backstage.io/kubernetes-id: njsfailtest
+        environment: dev
+    spec:
+      containers:
+        - name: njsfailtest
+          image: jaykumark7/njsfailtest:1.0.4
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_ENV
+              value: "dev"
+            - name: URL_PREFIX
+              value: /njsfailtest-dev
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
