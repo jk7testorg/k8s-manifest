@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: njse2etest1
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: njse2etest1
+spec:
+  selector:
+    app: njse2etest1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
