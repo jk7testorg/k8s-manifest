@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: njsfailtest
-          image: jaykumark7/njsfailtest:1.0.9
+          image: jaykumark7/njsfailtest:1.0.10
           ports:
             - containerPort: 3000
           env:
