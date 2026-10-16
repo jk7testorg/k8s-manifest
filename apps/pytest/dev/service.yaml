@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pytest
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: pytest
+spec:
+  selector:
+    app: pytest
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
