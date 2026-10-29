@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-java-maven-gitlab-test
+  namespace: dev
+  labels:
+    backstage.io/kubernetes-id: demo-java-maven-gitlab-test
+spec:
+  selector:
+    app: demo-java-maven-gitlab-test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
