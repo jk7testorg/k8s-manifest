@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-nodejs-githubactions-test
+  namespace: prod
+  labels:
+    app: demo-nodejs-githubactions-test
+    backstage.io/kubernetes-id: demo-nodejs-githubactions-test
+    environment: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-nodejs-githubactions-test
+  template:
+    metadata:
+      labels:
+        app: demo-nodejs-githubactions-test
+        backstage.io/kubernetes-id: demo-nodejs-githubactions-test
+        environment: prod
+    spec:
+      containers:
+        - name: demo-nodejs-githubactions-test
+          image: jaykumark7/demo-nodejs-githubactions-test:1.0.7
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_ENV
+              value: "prod"
+            - name: URL_PREFIX
+              value: /demo-nodejs-githubactions-test-prod
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
