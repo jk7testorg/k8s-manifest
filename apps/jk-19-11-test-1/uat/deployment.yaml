@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jk-19-11-test-1
+  namespace: uat
+  labels:
+    app: jk-19-11-test-1
+    backstage.io/kubernetes-id: jk-19-11-test-1
+    environment: uat
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jk-19-11-test-1
+  template:
+    metadata:
+      labels:
+        app: jk-19-11-test-1
+        backstage.io/kubernetes-id: jk-19-11-test-1
+        environment: uat
+    spec:
+      containers:
+        - name: jk-19-11-test-1
+          image: jaykumark7/jk-19-11-test-1:1.0.1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "uat"
+            - name: URL_PREFIX
+              value: /jk-19-11-test-1-uat
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
